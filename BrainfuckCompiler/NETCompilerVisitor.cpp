@@ -45,14 +45,14 @@ void NETCompilerVisitor::writeLDFTN(const char* handle)
 {
 	stringstream ss;
 	ss<<"ldftn "<<handle;
-	writeCommand(ss.str().c_str(), 1);
+	writeCommand(ss.str().c_str());
 }
 
 void NETCompilerVisitor::writeNEWOBJ(const char* handle)
 {
 	stringstream ss;
 	ss<<"newobj "<<handle;
-	writeCommand(ss.str().c_str(), 1);
+	writeCommand(ss.str().c_str());
 }
 void NETCompilerVisitor::writeLDNULL()
 {
@@ -186,7 +186,7 @@ void NETCompilerVisitor::Accept(InputCommand *command)
 	writeDup();
 	writeLDARG(2);
 	writeCALL(SYSTEM_IO_STREAM_READBYTE, true);
-	writeCommand("conv.u4", 1);
+	writeCommand("conv.u4");
 	writeCALL(SET_CURRENT_HANDLE);
 }
 

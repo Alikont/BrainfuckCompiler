@@ -24,7 +24,10 @@ int _tmain(int argc, _TCHAR* argv[])
 		input_stream = file;
 		input = shared_ptr<ifstream>((ifstream*)input_stream);
 	}
-
+	else
+	{
+		input_stream = &cin;
+	}
 	HLVMCompiler compiler;
 	auto result = compiler.Compile(input_stream, 0);
 
